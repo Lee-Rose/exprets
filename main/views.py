@@ -4,8 +4,13 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'main/index.html')
 
-def about(request):
-    return render(request, 'main/about.html')
+def week(request):
+    return render(request, 'main/films.html')
 
-def actors(request):
-    return render(request, '/main.actors.html')
+def watchlist(request):
+    return render(request, 'main/watchlist.html')
+
+def sign_in(request):
+    return render(request, 'main/sign_in.html')
+
+

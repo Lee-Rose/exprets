@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title_text %}Films{% endblock %}
+
+{% block content_text %}
+    <div class="features">
+        <h1>Films</h1>
+        <p>Movies in this week</p>      <!--путь по кнопке, не открывается films_detail.html-->
+        <a href="../../films_detail.html"><button class="btn btn-outline-info">GO!</button></a>
+    </div>          <!--как сделать чтобы выводился список фильмов? формат фото - под ним название-->
+    <div class="articles">
+    {%for article in articles%}
+    <div class="article">
+        <img src="{{ article.thumb.url }}">
+        <h2><a href="{% url 'articles:detail' slug=article.slug%}">{{article.title}}</a></h2>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

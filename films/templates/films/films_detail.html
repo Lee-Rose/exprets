@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content_text %}
+
+<div class="film-detail">
+    <div class="film-d">
+        <h1>{{article.title}}</h1>
+        <img src="{{article.thumb.url }}">
+        <p>{{article.anons}}</p>
+        <p>{{article.year_of_release}}</p>
+        <p>{{article.director}}</p>
+        <p>{{article.actors}}</p>
+    </div>
+</div>
+{% endblock %}

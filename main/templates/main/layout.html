@@ -7,11 +7,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title_text %}{% endblock %}</title>
-    <style>
-        a {
-    text-decoration: none;
-    }
-    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -21,17 +16,15 @@
         <img src="{% static 'main/img/logo.png' %}" alt="">
         <span class="logo">Movies</span>
         <ul>
-            <a class="active" href=""><li>Home page</li></a>
-            <a href="main/index.html"><li>This week</li></a>
-            <a href="main/about.html"><li>Actors</li></a>
-            <a href="main/actors.html"><li>Sign in</li></a>
+            <a class="active" href="{% url 'home' %}"><li>Home page</li></a>
+            <a href="{% url 'films_list' %}"><li>Films</li></a>
+            <a href="{% url 'watchlist' %}"><li>Watchlist</li></a>
+            <a href="{% url 'sign_in' %}"><li><i class="far fa-sign-in-alt"></i> Sign in</li></a>
         </ul>
-
     </aside>
     <main>
-       {% block content_text %}
+        {% block content_text %}
         {% endblock %}
     </main>
-
 </body>
 </html>
